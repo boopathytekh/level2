@@ -1,29 +1,29 @@
 #include <stdio.h>
 #include <conio.h>
  
-int main()
+void  main()
 {
 	int low, high, i, flag, temp;
 	printf("Enter two numbers(intevals): ");
-	scanf("%d %d", &low, &high);
+	scanf("%d %d", &n1, &n2);
  
 	//swapping numbers if low is greater than high
-	if (low > high) 
+	if (n1 > n2) 
 	{
-		temp = low;
-		low = high;
-		high = temp;
+		temp = n1;
+		n1 = n2;
+		n2 = temp;
 	}
  
-	printf("Prime numbers between %d and %d are: ", low, high);
+	printf("Prime numbers between %d and %d are: ", n1, n2);
  
-	while (low < high)
+	while (n1 < n2)
 	{
 		flag = 0;
  
-		for(i = 2; i <= low/2; ++i)
+		for(i = 2; i <= n1/2; ++i)
 		{
-			if(low % i == 0)
+			if(n1% i == 0)
 			{
 				flag = 1;
 				break;
@@ -31,10 +31,10 @@ int main()
 		}
  
 		if (flag == 0)
-			printf("%d ", low);
+			printf("%d ", n1);
  
-		++low;
+		++n1;
 	}
 	getch();
-	return 0;
+	
 }
