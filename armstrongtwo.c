@@ -1,23 +1,40 @@
 #include <stdio.h>
-void  main()
+#include <conio.h>
+ 
+int main()
 {
-  int n1, n2, a, temp, num, rem;
-  printf("Enter two numbers(intervals): ");
-  scanf("%d %d", &n1, &n2);
-  printf("Armstrong numbers between %d an %d are: ", n1, n2);
-  for(i=n1+1; i<n2; ++a)
-  {
-      temp=a;
-      num=0;
-      while(temp!=0)
-      {
-          rem=(temp%10);
-          num+=rem*rem*rem;
-          temp/=10;
-      }
-      if(a==num)
-      {
-          printf("%d ",a);
-      }
-  }
+	int low, high, i, flag, temp;
+	printf("Enter two numbers(intevals): ");
+	scanf("%d %d", &low, &high);
+ 
+	//swapping numbers if low is greater than high
+	if (low > high) 
+	{
+		temp = low;
+		low = high;
+		high = temp;
+	}
+ 
+	printf("Prime numbers between %d and %d are: ", low, high);
+ 
+	while (low < high)
+	{
+		flag = 0;
+ 
+		for(i = 2; i <= low/2; ++i)
+		{
+			if(low % i == 0)
+			{
+				flag = 1;
+				break;
+			}
+		}
+ 
+		if (flag == 0)
+			printf("%d ", low);
+ 
+		++low;
+	}
+	getch();
+	return 0;
 }
