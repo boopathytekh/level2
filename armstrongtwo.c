@@ -1,13 +1,13 @@
 #include <stdio.h>
 void  main()
 {
-  int n1, n2, i, temp, num, rem;
+  int n1, n2, a, temp, num, rem;
   printf("Enter two numbers(intervals): ");
   scanf("%d %d", &n1, &n2);
   printf("Armstrong numbers between %d an %d are: ", n1, n2);
-  for(i=n1+1; i<n2; ++i)
+  for(i=n1+1; i<n2; ++a)
   {
-      temp=i;
+      temp=a;
       num=0;
       while(temp!=0)
       {
@@ -15,9 +15,9 @@ void  main()
           num+=rem*rem*rem;
           temp/=10;
       }
-      if(i==num)
+      if(a==num)
       {
-          printf("%d ",i);
+          printf("%d ",a);
       }
   }
 }
